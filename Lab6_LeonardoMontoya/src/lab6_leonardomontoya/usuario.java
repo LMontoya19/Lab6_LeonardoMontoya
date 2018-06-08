@@ -5,10 +5,21 @@
  */
 package lab6_leonardomontoya;
 
+import java.util.ArrayList;
+import java.util.Date;
+
 /**
  *
  * @author Inspiron
  */
 public class usuario {
+    private String correo;
+    private String contraseña;
+    private Date nacimiento;
+    private ArrayList<pelicula> peliculas = new ArrayList();
+    private ArrayList<serie> series = new ArrayList();
+    private String tarjeta;
+    
+    
     
 }
