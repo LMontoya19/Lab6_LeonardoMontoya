@@ -5,7 +5,12 @@
  */
 package lab6_leonardomontoya;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -29,7 +34,7 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jDialog1 = new javax.swing.JDialog();
+        jdi_registrar = new javax.swing.JDialog();
         jLabel1 = new javax.swing.JLabel();
         jtf_newcorreo = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -40,10 +45,52 @@ public class Principal extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
+        jdi_login = new javax.swing.JDialog();
+        jtf_correol = new javax.swing.JTextField();
+        jtf_contral = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jdi_administrar = new javax.swing.JDialog();
+        jButton3 = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jl_pelis = new javax.swing.JList<>();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jl_series = new javax.swing.JList<>();
+        jdi_peli = new javax.swing.JDialog();
+        jtf_id = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jtf_nombre = new javax.swing.JTextField();
+        jtf_categoria = new javax.swing.JTextField();
+        jtf_idiomas = new javax.swing.JTextField();
+        jtf_subtitulos = new javax.swing.JTextField();
+        jtf_duracion = new javax.swing.JTextField();
+        jtf_rating = new javax.swing.JTextField();
+        jtf_comentarios = new javax.swing.JTextField();
+        jtf_director = new javax.swing.JTextField();
+        jtf_productora = new javax.swing.JTextField();
+        jtf_actores = new javax.swing.JTextField();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
         jToolBar1 = new javax.swing.JToolBar();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btn_administrar = new javax.swing.JButton();
 
         jLabel1.setText("Usuario");
 
@@ -62,64 +109,338 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
-        jDialog1.getContentPane().setLayout(jDialog1Layout);
-        jDialog1Layout.setHorizontalGroup(
-            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDialog1Layout.createSequentialGroup()
-                .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jDialog1Layout.createSequentialGroup()
+        javax.swing.GroupLayout jdi_registrarLayout = new javax.swing.GroupLayout(jdi_registrar.getContentPane());
+        jdi_registrar.getContentPane().setLayout(jdi_registrarLayout);
+        jdi_registrarLayout.setHorizontalGroup(
+            jdi_registrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jdi_registrarLayout.createSequentialGroup()
+                .addGroup(jdi_registrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jdi_registrarLayout.createSequentialGroup()
                         .addGap(168, 168, 168)
                         .addComponent(jLabel1))
-                    .addGroup(jDialog1Layout.createSequentialGroup()
+                    .addGroup(jdi_registrarLayout.createSequentialGroup()
                         .addGap(47, 47, 47)
-                        .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jdi_registrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
                             .addComponent(jLabel3)))
-                    .addGroup(jDialog1Layout.createSequentialGroup()
+                    .addGroup(jdi_registrarLayout.createSequentialGroup()
                         .addGap(39, 39, 39)
-                        .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jdi_registrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5)
-                            .addGroup(jDialog1Layout.createSequentialGroup()
+                            .addGroup(jdi_registrarLayout.createSequentialGroup()
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jdi_registrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jButton4)
                                     .addComponent(jtf_credito, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap(118, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jdi_registrarLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jdi_registrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jtf_newpass1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jdc_nacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtf_newcorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(116, 116, 116))
         );
-        jDialog1Layout.setVerticalGroup(
-            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDialog1Layout.createSequentialGroup()
+        jdi_registrarLayout.setVerticalGroup(
+            jdi_registrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jdi_registrarLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addGap(38, 38, 38)
-                .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jdi_registrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jtf_newcorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addGap(25, 25, 25)
-                .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jdi_registrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jtf_newpass1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addGap(18, 18, 18)
-                .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jDialog1Layout.createSequentialGroup()
+                .addGroup(jdi_registrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jdi_registrarLayout.createSequentialGroup()
                         .addComponent(jdc_nacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(jdi_registrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jtf_credito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jLabel5))
                 .addGap(18, 18, 18)
                 .addComponent(jButton4)
                 .addContainerGap(55, Short.MAX_VALUE))
+        );
+
+        jLabel6.setText("Correo");
+
+        jLabel7.setText("contraseña");
+
+        jButton5.setText("Login");
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
+
+        jLabel8.setText("Login");
+
+        jLabel9.setText("Usuario administrador : admin/admin");
+
+        javax.swing.GroupLayout jdi_loginLayout = new javax.swing.GroupLayout(jdi_login.getContentPane());
+        jdi_login.getContentPane().setLayout(jdi_loginLayout);
+        jdi_loginLayout.setHorizontalGroup(
+            jdi_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jdi_loginLayout.createSequentialGroup()
+                .addGroup(jdi_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jdi_loginLayout.createSequentialGroup()
+                        .addGap(58, 58, 58)
+                        .addGroup(jdi_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel7))
+                        .addGap(26, 26, 26)
+                        .addGroup(jdi_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jtf_contral, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)
+                            .addComponent(jtf_correol)))
+                    .addGroup(jdi_loginLayout.createSequentialGroup()
+                        .addGap(154, 154, 154)
+                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jdi_loginLayout.createSequentialGroup()
+                        .addGap(179, 179, 179)
+                        .addComponent(jLabel8)))
+                .addContainerGap(121, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jdi_loginLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jdi_loginLayout.setVerticalGroup(
+            jdi_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jdi_loginLayout.createSequentialGroup()
+                .addGap(48, 48, 48)
+                .addComponent(jLabel8)
+                .addGap(39, 39, 39)
+                .addGroup(jdi_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jtf_correol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jdi_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jtf_contral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7))
+                .addGap(18, 18, 18)
+                .addComponent(jButton5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        jButton3.setText("Logout");
+
+        jl_pelis.setModel(new DefaultListModel());
+        jl_pelis.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jl_pelisMouseClicked(evt);
+            }
+        });
+        jScrollPane3.setViewportView(jl_pelis);
+
+        jl_series.setModel(new DefaultListModel());
+        jScrollPane4.setViewportView(jl_series);
+
+        javax.swing.GroupLayout jdi_administrarLayout = new javax.swing.GroupLayout(jdi_administrar.getContentPane());
+        jdi_administrar.getContentPane().setLayout(jdi_administrarLayout);
+        jdi_administrarLayout.setHorizontalGroup(
+            jdi_administrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jdi_administrarLayout.createSequentialGroup()
+                .addGap(296, 296, 296)
+                .addComponent(jButton3)
+                .addContainerGap(39, Short.MAX_VALUE))
+            .addGroup(jdi_administrarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26))
+        );
+        jdi_administrarLayout.setVerticalGroup(
+            jdi_administrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jdi_administrarLayout.createSequentialGroup()
+                .addContainerGap(23, Short.MAX_VALUE)
+                .addGroup(jdi_administrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton3)
+                .addContainerGap())
+        );
+
+        jLabel10.setText("ID");
+
+        jLabel11.setText("Nombre");
+
+        jLabel12.setText("Categoria");
+
+        jLabel13.setText("Idiomas");
+
+        jLabel14.setText("Subtitulos");
+
+        jLabel15.setText("Duracion");
+
+        jLabel16.setText("Rating");
+
+        jLabel17.setText("Comentarios");
+
+        jLabel18.setText("Productora");
+
+        jLabel19.setText("Lista de actores");
+
+        jLabel20.setText("Director");
+
+        jtf_categoria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtf_categoriaActionPerformed(evt);
+            }
+        });
+
+        jtf_productora.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtf_productoraActionPerformed(evt);
+            }
+        });
+
+        jLabel21.setText("Utilizando\",\"");
+
+        jLabel22.setText("Utilizando\",\"");
+
+        jLabel23.setText("Utilizando\",\"");
+
+        jLabel24.setText("Utilizando\",\"");
+
+        jButton6.setText("Guardar");
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton6MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jdi_peliLayout = new javax.swing.GroupLayout(jdi_peli.getContentPane());
+        jdi_peli.getContentPane().setLayout(jdi_peliLayout);
+        jdi_peliLayout.setHorizontalGroup(
+            jdi_peliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jdi_peliLayout.createSequentialGroup()
+                .addGroup(jdi_peliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jdi_peliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jdi_peliLayout.createSequentialGroup()
+                            .addGap(37, 37, 37)
+                            .addComponent(jLabel10)
+                            .addGap(18, 18, 18)
+                            .addComponent(jtf_id))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jdi_peliLayout.createSequentialGroup()
+                            .addGap(20, 20, 20)
+                            .addComponent(jLabel11)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jtf_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jdi_peliLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jdi_peliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jdi_peliLayout.createSequentialGroup()
+                                .addComponent(jLabel17)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jtf_comentarios, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel21))
+                            .addGroup(jdi_peliLayout.createSequentialGroup()
+                                .addComponent(jLabel18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jtf_productora, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jdi_peliLayout.createSequentialGroup()
+                                .addComponent(jLabel20)
+                                .addGap(18, 18, 18)
+                                .addComponent(jtf_director, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jdi_peliLayout.createSequentialGroup()
+                                .addComponent(jLabel16)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jtf_rating, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jdi_peliLayout.createSequentialGroup()
+                                .addComponent(jLabel15)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jtf_duracion, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jdi_peliLayout.createSequentialGroup()
+                                .addComponent(jLabel14)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jtf_subtitulos, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel23))
+                            .addGroup(jdi_peliLayout.createSequentialGroup()
+                                .addComponent(jLabel13)
+                                .addGap(18, 18, 18)
+                                .addComponent(jtf_idiomas, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel24))
+                            .addGroup(jdi_peliLayout.createSequentialGroup()
+                                .addComponent(jLabel12)
+                                .addGap(18, 18, 18)
+                                .addComponent(jtf_categoria, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jdi_peliLayout.createSequentialGroup()
+                                .addComponent(jLabel19)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jtf_actores, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel22)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                                .addComponent(jButton6)))))
+                .addGap(43, 43, 43))
+        );
+        jdi_peliLayout.setVerticalGroup(
+            jdi_peliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jdi_peliLayout.createSequentialGroup()
+                .addGap(48, 48, 48)
+                .addGroup(jdi_peliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jtf_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jdi_peliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(jtf_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jdi_peliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(jtf_categoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jdi_peliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(jtf_idiomas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel24))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jdi_peliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel14)
+                    .addGroup(jdi_peliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jtf_subtitulos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel23)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jdi_peliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(jtf_duracion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jdi_peliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(jtf_rating, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jdi_peliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel17)
+                    .addComponent(jtf_comentarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel21))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jdi_peliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel18)
+                    .addComponent(jtf_productora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jdi_peliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20)
+                    .addComponent(jtf_director, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jdi_peliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(jtf_actores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel22)
+                    .addComponent(jButton6))
+                .addGap(16, 16, 16))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -130,19 +451,35 @@ public class Principal extends javax.swing.JFrame {
         jButton1.setFocusable(false);
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
         jToolBar1.add(jButton1);
 
         jButton2.setText("LOGIN");
         jButton2.setFocusable(false);
         jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
         jToolBar1.add(jButton2);
 
-        jButton3.setText("jButton3");
-        jButton3.setFocusable(false);
-        jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jButton3);
+        btn_administrar.setText("Administrar");
+        btn_administrar.setEnabled(false);
+        btn_administrar.setFocusable(false);
+        btn_administrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btn_administrar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btn_administrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_administrarMouseClicked(evt);
+            }
+        });
+        jToolBar1.add(btn_administrar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -162,8 +499,152 @@ public class Principal extends javax.swing.JFrame {
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
         // TODO add your handling code here:
-        
+        AdministarUsers ap = new AdministarUsers("./Usuarios.txt");
+        ap.cargarArchivo();
+        String correo = jtf_newcorreo.getText();
+        String contraseña = jtf_newpass1.getText();
+        String dia = Integer.toString(jdc_nacimiento.getDate().getDay());
+        String mes = Integer.toString(jdc_nacimiento.getDate().getMonth());
+        String ano = Integer.toString(jdc_nacimiento.getDate().getYear());
+        String date = dia + "/" + "/" + mes + "/" + ano;
+        String tarjeta = jtf_credito.getText();
+        usuario u = new usuario(correo, contraseña, date, tarjeta);
+        ap.getListaUsuari().add(u);
+        try {
+            ap.escribirArchivo();
+        } catch (IOException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        jdi_registrar.setVisible(false);
     }//GEN-LAST:event_jButton4MouseClicked
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        // TODO add your handling code here:
+        jdi_registrar.setModal(true);
+        jdi_registrar.pack();
+        jdi_registrar.setLocationRelativeTo(this);
+        jdi_registrar.setVisible(true);
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        // TODO add your handling code here:
+        AdministarUsers ap = new AdministarUsers("./Usuarios.txt");
+        ap.cargarArchivo();
+        boolean verificar = false;
+        if (jtf_correol.getText().equals("admin") && jtf_correol.getText().equals("admin")) {
+            admin = true;
+            btn_administrar.setEnabled(true);
+        } else {
+            for (int i = 0; i < ap.getListaUsuari().size(); i++) {
+                System.out.println(ap.getListaUsuari().get(i).getCorreo());
+                System.out.println(ap.getListaUsuari().get(i).getContraseña());
+                if (ap.getListaUsuari().get(i).getCorreo().equals(jtf_correol.getText()) && ap.getListaUsuari().get(i).getContraseña().equals(jtf_contral)) {
+                    verificar = true;
+                }
+            }
+            if (verificar == true) {
+                JOptionPane.showMessageDialog(jdi_login, "Ingreso correctamente");
+            } else {
+                JOptionPane.showMessageDialog(jdi_login, "Correo o contraseña incorrecta");
+            }
+            jdi_login.setVisible(false);
+        }
+    }//GEN-LAST:event_jButton5MouseClicked
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        // TODO add your handling code here:
+        jdi_login.setModal(true);
+        jdi_login.pack();
+        jdi_login.setLocationRelativeTo(this);
+        jdi_login.setVisible(true);
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void btn_administrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_administrarMouseClicked
+        // TODO add your handling code here:
+        if (btn_administrar.isEnabled()) {
+            jdi_administrar.setModal(true);
+            jdi_administrar.pack();
+            jdi_administrar.setLocationRelativeTo(this);
+            jdi_administrar.setVisible(true);
+            DefaultListModel modelo = (DefaultListModel) jl_pelis.getModel();
+            administrarPeliculas ap = new administrarPeliculas("./Peliculas.txt");
+            ap.cargarArchivo();
+            for (int i = 0; i < ap.getListaUsuari().size(); i++) {
+                modelo.addElement(ap.getListaUsuari().get(i));
+            }
+            jl_pelis.setModel(modelo);
+            DefaultListModel modelo2 = (DefaultListModel) jl_series.getModel();
+            AdministarSeries as = new AdministarSeries("./Peliculas.txt");
+            as.cargarArchivo();
+            for (int i = 0; i < as.getListaUsuari().size(); i++) {
+                modelo.addElement(as.getListaUsuari().get(i));
+            }
+            jl_series.setModel(modelo2);
+        }
+    }//GEN-LAST:event_btn_administrarMouseClicked
+
+    private void jtf_categoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_categoriaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtf_categoriaActionPerformed
+
+    private void jtf_productoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_productoraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtf_productoraActionPerformed
+
+    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
+        // TODO add your handling code here:
+        pelicula p = new pelicula();
+        p.setNombre(jtf_nombre.getText());
+        p.setId(jtf_id.getText());
+        p.setCategoria(jtf_categoria.getText());
+        ArrayList<String> idiomas = new ArrayList<>();
+        String[] token1 = jtf_idiomas.getText().split(",");
+        for (int j = 0; j < token1.length; j++) {
+            idiomas.add(token1[j]);
+        }
+        p.setIdiomas(idiomas);
+        ArrayList<String> subtitulos = new ArrayList<>();
+        String[] token2 = jtf_subtitulos.getText().split(",");
+        for (int j = 0; j < token2.length; j++) {
+            subtitulos.add(token2[j]);
+        }
+        p.setSubtitulos(subtitulos);
+        p.setDuracion(jtf_duracion.getText());
+        p.setRating(Integer.parseInt(jtf_duracion.getText()));
+        ArrayList<String> comentrarios = new ArrayList<>();
+        String[] token3 = jtf_comentarios.getText().split(",");
+        for (int j = 0; j < token3.length; j++) {
+            comentrarios.add(token3[j]);
+        }
+        System.out.println(comentrarios);
+        p.setComentarios(comentrarios);
+        p.setProductora(jtf_productora.getText());
+        p.setDirector(jtf_director.getText());
+
+        DefaultListModel modelo = (DefaultListModel) jl_pelis.getModel();
+        administrarPeliculas ap = new administrarPeliculas("./Peliculas.txt");
+        ap.cargarArchivo();
+        ap.getListaUsuari().add(p);
+        try {
+            ap.escribirArchivo();
+        } catch (IOException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        for (int i = 0; i < ap.getListaUsuari().size(); i++) {
+            modelo.addElement(ap.getListaUsuari().get(i));
+        }
+        jl_pelis.setModel(modelo);
+
+        jdi_peli.setVisible(false);
+    }//GEN-LAST:event_jButton6MouseClicked
+
+    private void jl_pelisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_pelisMouseClicked
+        // TODO add your handling code here:
+        jdi_peli.setModal(true);
+        jdi_peli.pack();
+        jdi_peli.setLocationRelativeTo(this);
+        jdi_peli.setVisible(true);
+    }//GEN-LAST:event_jl_pelisMouseClicked
 
     /**
      * @param args the command line arguments
@@ -201,21 +682,64 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_administrar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JDialog jDialog1;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JToolBar jToolBar1;
     private com.toedter.calendar.JDateChooser jdc_nacimiento;
+    private javax.swing.JDialog jdi_administrar;
+    private javax.swing.JDialog jdi_login;
+    private javax.swing.JDialog jdi_peli;
+    private javax.swing.JDialog jdi_registrar;
+    private javax.swing.JList<String> jl_pelis;
+    private javax.swing.JList<String> jl_series;
+    private javax.swing.JTextField jtf_actores;
+    private javax.swing.JTextField jtf_categoria;
+    private javax.swing.JTextField jtf_comentarios;
+    private javax.swing.JTextField jtf_contral;
+    private javax.swing.JTextField jtf_correol;
     private javax.swing.JTextField jtf_credito;
+    private javax.swing.JTextField jtf_director;
+    private javax.swing.JTextField jtf_duracion;
+    private javax.swing.JTextField jtf_id;
+    private javax.swing.JTextField jtf_idiomas;
     private javax.swing.JTextField jtf_newcorreo;
     private javax.swing.JTextField jtf_newpass1;
+    private javax.swing.JTextField jtf_nombre;
+    private javax.swing.JTextField jtf_productora;
+    private javax.swing.JTextField jtf_rating;
+    private javax.swing.JTextField jtf_subtitulos;
     // End of variables declaration//GEN-END:variables
 ArrayList<usuario> usuarios = new ArrayList();
+    boolean admin = false;
 }
