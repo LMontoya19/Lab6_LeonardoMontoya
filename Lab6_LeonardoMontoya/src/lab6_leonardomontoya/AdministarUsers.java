@@ -50,12 +50,11 @@ public class AdministarUsers {
         FileWriter fw = null;
         BufferedWriter bw = null;
         try {
-            fw = new FileWriter(archivo, false);
+            fw = new FileWriter(archivo,false);
             bw = new BufferedWriter(fw);
             for (usuario t : listaUsuari) {
                 bw.write(t.getCorreo() + ";");
                 bw.write(t.getContraseña() + ";");
-                bw.write(t.getNacimiento() + ";");
                 for (int i = 0; i < t.getPeliculas().size(); i++) {
                     bw.write(t.getPeliculas().get(i) + ",");
                 }
@@ -64,7 +63,6 @@ public class AdministarUsers {
                     bw.write(t.getSeries().get(i) + ",");
                 }
                 bw.write(";");
-                bw.write(t.getTarjeta() + ";");
             }
             bw.flush();
         } catch (Exception e) {
@@ -83,26 +81,24 @@ public class AdministarUsers {
                 while (sc.hasNext()) {
                     String correo = sc.next();
                     String contraseña = sc.next();
-                    String nacimiento = sc.next();
                     Scanner sc2 = new Scanner(sc.next());
                     sc2.useDelimiter(",");
                     ArrayList<String> peliculas = new ArrayList();
                     ArrayList<String> series = new ArrayList();
                     while (sc2.hasNext()) {
-                        peliculas.add(sc.next());
+                        peliculas.add(sc2.next());
                     }
                     Scanner sc3 = new Scanner(sc.next());
                     sc3.useDelimiter(",");
                     while (sc3.hasNext()) {
                         series.add(sc3.next());
                     }
-                    String tarjeta = sc.next();
-                    usuario u = new usuario(correo,contraseña,nacimiento,tarjeta);
+                    usuario u = new usuario(correo, contraseña);
                     u.setPeliculas(peliculas);
                     u.setSeries(series);
-                    
+
                     listaUsuari.add(u);
-                    
+
                 }
             } catch (Exception e) {
             }

@@ -20,6 +20,11 @@ public class usuario {
     private ArrayList<String> series = new ArrayList();
     private String tarjeta;
 
+    public usuario(String correo, String contraseña) {
+        this.correo = correo;
+        this.contraseña = contraseña;
+    }
+
     public usuario(String correo, String contraseña, String nacimiento, String tarjeta) {
         this.correo = correo;
         this.contraseña = contraseña;
