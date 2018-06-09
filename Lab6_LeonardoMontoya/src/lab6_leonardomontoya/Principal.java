@@ -974,23 +974,24 @@ public class Principal extends javax.swing.JFrame {
                 }
                 pelicula p = (pelicula) modelo.get(jl_pelis.getSelectedIndex());
                 p.setNombre(JOptionPane.showInputDialog(jdi_administrar, "Ingrese nuevo nombre"));
-                p.setCategoria(JOptionPane.showInputDialog(this, "Ingrese nueva Categoria"));
+                p.setCategoria(JOptionPane.showInputDialog(jdi_administrar, "Ingrese nueva Categoria"));
                 p.setDuracion(JOptionPane.showInputDialog(jdi_administrar, "Ingrese Duracion"));
                 pelis.set(mod, p);
-            }else{
-             if (modelo.get(jl_pelis.getSelectedIndex()) instanceof serie) {
-                if (seriess.contains((serie) modelo.get(jl_pelis.getSelectedIndex()))) {
-                    mod = seriess.indexOf((serie) modelo.get(jl_pelis.getSelectedIndex()));
+            } else {
+                if (modelo.get(jl_pelis.getSelectedIndex()) instanceof serie) {
+                    if (seriess.contains((serie) modelo.get(jl_pelis.getSelectedIndex()))) {
+                        mod = seriess.indexOf((serie) modelo.get(jl_pelis.getSelectedIndex()));
+                    }
+                    serie p = (serie) modelo.get(jl_pelis.getSelectedIndex());
+                    p.setNombre(JOptionPane.showInputDialog(jdi_administrar, "Ingrese nuevo nombre"));
+                    p.setCategoria(JOptionPane.showInputDialog(this, "Ingrese nueva Categoria"));
+                    p.setDuracion(JOptionPane.showInputDialog(jdi_administrar, "Ingrese Duracion"));
+                    p.setProductora(JOptionPane.showInputDialog(jdi_administrar, "Ingrese productora"));
+                    seriess.set(mod, p);
+
                 }
-                serie p = (serie) modelo.get(jl_pelis.getSelectedIndex());
-                p.setNombre(JOptionPane.showInputDialog(jdi_administrar, "Ingrese nuevo nombre"));
-                p.setCategoria(JOptionPane.showInputDialog(this, "Ingrese nueva Categoria"));
-                p.setDuracion(JOptionPane.showInputDialog(jdi_administrar, "Ingrese Duracion"));
-                p.setProductora(JOptionPane.showInputDialog(jdi_administrar, "Ingrese productora"));
-                seriess.set(mod, p);
-            
             }
-            }}
+        }
     }//GEN-LAST:event_jmi_modificarActionPerformed
 
     /**
