@@ -620,7 +620,7 @@ public class Principal extends javax.swing.JFrame {
         ap.getListaUsuari().add(u);
         jtf_newcorreo.setText("");
         jtf_newpass1.setText("");
-
+        
         try {
             ap.escribirArchivo();
         } catch (IOException ex) {
@@ -680,7 +680,7 @@ public class Principal extends javax.swing.JFrame {
                 }
                 jList1.setModel(modelo);
                 btn_favpeli.setEnabled(true);
-
+                
                 DefaultTreeModel modeloArbol = (DefaultTreeModel) jTree1.getModel();
                 modeloArbol.setRoot(new DefaultMutableTreeNode("Favoritas"));
                 DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modeloArbol.getRoot();
@@ -703,13 +703,13 @@ public class Principal extends javax.swing.JFrame {
                     }
                 }
                 modeloArbol.reload();
-
+                
             } else {
                 JOptionPane.showMessageDialog(jdi_login, "Correo o contraseña incorrecta");
                 jtf_correol.setText("");
                 jtf_contral.setText("");
             }
-
+            
         }
     }//GEN-LAST:event_jButton5MouseClicked
 
@@ -738,7 +738,7 @@ public class Principal extends javax.swing.JFrame {
             jdi_administrar.pack();
             jdi_administrar.setLocationRelativeTo(this);
             jdi_administrar.setVisible(true);
-
+            
         }
     }//GEN-LAST:event_btn_administrarMouseClicked
 
@@ -779,7 +779,7 @@ public class Principal extends javax.swing.JFrame {
         p.setComentarios(comentrarios);*/
         p.setProductora(jtf_productora.getText());
         p.setDirector(jtf_director.getText());
-
+        
         DefaultListModel modelo = (DefaultListModel) jl_pelis.getModel();
         administrarPeliculas ap = new administrarPeliculas("./Peliculas.txt");
         ap.cargarArchivo();
@@ -793,7 +793,7 @@ public class Principal extends javax.swing.JFrame {
             modelo.addElement(ap.getListaUsuari().get(i));
         }
         jl_pelis.setModel(modelo);
-
+        
         jdi_peli.setVisible(false);
     }//GEN-LAST:event_jButton6MouseClicked
 
@@ -822,16 +822,24 @@ public class Principal extends javax.swing.JFrame {
                     codigo = ((pelicula) modeloLISTA.get(jList1.getSelectedIndex())).getId();
                     for (int j = 0; j < raiz.getChildAt(0).getChildCount(); j++) {
                         DefaultMutableTreeNode test = (DefaultMutableTreeNode) raiz.getChildAt(0).getChildAt(j);
-                        if (((pelicula) test.getUserObject()).getId().equals(codigo)) {
-                            JOptionPane.showMessageDialog(this, "Ya lo tiene en sus favoritas");
+                        if ((test.getUserObject()).toString().equals(categoria)) {
                             centinela = 1;
+                            for (int i = 0; i < raiz.getChildAt(0).getChildAt(j).getChildCount(); i++) {
+                                DefaultMutableTreeNode test2 = (DefaultMutableTreeNode) raiz.getChildAt(0).getChildAt(j).getChildAt(i);
+                                if (((pelicula) test2.getUserObject()).getId().equals(codigo)) {
+                                    JOptionPane.showMessageDialog(this, "Ya lo tiene en sus favoritas");
+                                    centinela = 2;
+                                }
+                            }
                         }
+                        
                     }
                     if (centinela == 0) {
                         DefaultMutableTreeNode pel = (DefaultMutableTreeNode) raiz.getChildAt(0);
-                        pel.add(new DefaultMutableTreeNode((pelicula) modeloLISTA.get(jList1.getSelectedIndex())));
+                        DefaultMutableTreeNode cat = new DefaultMutableTreeNode(categoria);
+                        cat.add(new DefaultMutableTreeNode((pelicula) modeloLISTA.get(jList1.getSelectedIndex())));
+                        pel.add(cat);
                         actual.getPeliculas().add(((pelicula) modeloLISTA.get(jList1.getSelectedIndex())).getId());
-
                         ap.getListaUsuari().set(nnn, actual);
                         try {
                             ap.escribirArchivo();
@@ -839,21 +847,47 @@ public class Principal extends javax.swing.JFrame {
                             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
                         }
                     }
+                    if (centinela == 1) {
+                        for (int j = 0; j < raiz.getChildAt(0).getChildCount(); j++) {
+                            DefaultMutableTreeNode test = (DefaultMutableTreeNode) raiz.getChildAt(0).getChildAt(j);
+                            if ((test.getUserObject()).toString().equals(categoria)) {
+                                test.add(new DefaultMutableTreeNode((pelicula) modeloLISTA.get(jList1.getSelectedIndex())));
+                                actual.getPeliculas().add(((pelicula) modeloLISTA.get(jList1.getSelectedIndex())).getId());
+                                ap.getListaUsuari().set(nnn, actual);
+                                try {
+                                    ap.escribirArchivo();
+                                } catch (IOException ex) {
+                                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                                }
+                            }
+                            
+                        }
+                        
+                    }
                 } else {
+                   if (modeloLISTA.get(jList1.getSelectedIndex()) instanceof serie) {
                     categoria = ((serie) modeloLISTA.get(jList1.getSelectedIndex())).getCategoria();
                     nombre = ((serie) modeloLISTA.get(jList1.getSelectedIndex())).getNombre();
                     codigo = ((serie) modeloLISTA.get(jList1.getSelectedIndex())).getId();
                     for (int j = 0; j < raiz.getChildAt(1).getChildCount(); j++) {
                         DefaultMutableTreeNode test = (DefaultMutableTreeNode) raiz.getChildAt(1).getChildAt(j);
-                        if (((serie) test.getUserObject()).getId().equals(codigo)) {
-                            JOptionPane.showMessageDialog(this, "Ya lo tiene en sus favoritas");
+                        if ((test.getUserObject()).toString().equals(categoria)) {
                             centinela = 1;
+                            for (int i = 0; i < raiz.getChildAt(1).getChildAt(j).getChildCount(); i++) {
+                                DefaultMutableTreeNode test2 = (DefaultMutableTreeNode) raiz.getChildAt(1).getChildAt(j).getChildAt(i);
+                                if (((serie) test2.getUserObject()).getId().equals(codigo)) {
+                                    JOptionPane.showMessageDialog(this, "Ya lo tiene en sus favoritas");
+                                    centinela = 2;
+                                }
+                            }
                         }
+                        
                     }
                     if (centinela == 0) {
-                        DefaultMutableTreeNode se = (DefaultMutableTreeNode) raiz.getChildAt(1);
-                        se.add(new DefaultMutableTreeNode((serie) modeloLISTA.get(jList1.getSelectedIndex())));
-
+                        DefaultMutableTreeNode pel = (DefaultMutableTreeNode) raiz.getChildAt(1);
+                        DefaultMutableTreeNode cat = new DefaultMutableTreeNode(categoria);
+                        cat.add(new DefaultMutableTreeNode((serie) modeloLISTA.get(jList1.getSelectedIndex())));
+                        pel.add(cat);
                         actual.getSeries().add(((serie) modeloLISTA.get(jList1.getSelectedIndex())).getId());
                         ap.getListaUsuari().set(nnn, actual);
                         try {
@@ -862,6 +896,23 @@ public class Principal extends javax.swing.JFrame {
                             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
                         }
                     }
+                    if (centinela == 1) {
+                        for (int j = 0; j < raiz.getChildAt(1).getChildCount(); j++) {
+                            DefaultMutableTreeNode test = (DefaultMutableTreeNode) raiz.getChildAt(1).getChildAt(j);
+                            if ((test.getUserObject()).toString().equals(categoria)) {
+                                test.add(new DefaultMutableTreeNode((serie) modeloLISTA.get(jList1.getSelectedIndex())));
+                                actual.getSeries().add(((serie) modeloLISTA.get(jList1.getSelectedIndex())).getId());
+                                ap.getListaUsuari().set(nnn, actual);
+                                try {
+                                    ap.escribirArchivo();
+                                } catch (IOException ex) {
+                                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                                }
+                            }
+                            
+                        }
+                        
+                    }}
                 }
                 modeloARBOL.reload();
             } else {
@@ -891,7 +942,7 @@ public class Principal extends javax.swing.JFrame {
     private void jmi_anadirpeliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_anadirpeliActionPerformed
         // TODO add your handling code here:
         pelicula p = new pelicula();
-
+        
         p.setNombre(JOptionPane.showInputDialog(jdi_administrar, "Ingrese el nombre de la pelicula"));
         p.setCategoria(JOptionPane.showInputDialog(jdi_administrar, "Ingrese categoria"));
         p.setCategoria(JOptionPane.showInputDialog(jdi_administrar, "Ingrese duracion"));
@@ -907,7 +958,7 @@ public class Principal extends javax.swing.JFrame {
         for (serie s : seriess) {
             modelo.addElement(s);
         }
-
+        
         jl_pelis.setModel(modelo);
 
     }//GEN-LAST:event_jmi_anadirpeliActionPerformed
@@ -915,7 +966,7 @@ public class Principal extends javax.swing.JFrame {
     private void jmi_anadirserieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_anadirserieActionPerformed
         // TODO add your handling code here:
         serie p = new serie();
-
+        
         p.setNombre(JOptionPane.showInputDialog(jdi_administrar, "Ingrese el nombre de la serie"));
         p.setCategoria(JOptionPane.showInputDialog(jdi_administrar, "Ingrese categoria"));
         p.setCategoria(JOptionPane.showInputDialog(jdi_administrar, "Ingrese duracion"));
@@ -931,7 +982,7 @@ public class Principal extends javax.swing.JFrame {
         for (serie s : seriess) {
             modelo.addElement(s);
         }
-
+        
         jl_pelis.setModel(modelo);
     }//GEN-LAST:event_jmi_anadirserieActionPerformed
 
@@ -953,11 +1004,11 @@ public class Principal extends javax.swing.JFrame {
                 if (seriess.contains((serie) modelo.get(jl_pelis.getSelectedIndex()))) {
                     seriess.remove((serie) modelo.get(jl_pelis.getSelectedIndex()));
                 }
-
+                
             }
-
+            
             modelo.remove(jl_pelis.getSelectedIndex());
-
+            
         } else {
             JOptionPane.showMessageDialog(jdi_administrar, "No selecciono nada de la lista");
         }
@@ -988,7 +1039,7 @@ public class Principal extends javax.swing.JFrame {
                     p.setDuracion(JOptionPane.showInputDialog(jdi_administrar, "Ingrese Duracion"));
                     p.setProductora(JOptionPane.showInputDialog(jdi_administrar, "Ingrese productora"));
                     seriess.set(mod, p);
-
+                    
                 }
             }
         }
@@ -1110,7 +1161,7 @@ ArrayList<usuario> usuarios = new ArrayList();
     pelicula p8 = new pelicula("008", "Rapidos y Furiosos 3", "Accion", "2 horas", 5, "b", "b");
     pelicula p9 = new pelicula("009", "Rapidos y Furiosos 4", "Accion", "2 horas", 5, "b", "b");
     pelicula p10 = new pelicula("010", "Rapidos y Furiosos 5", "Accion", "2 horas", 5, "b", "b");
-
+    
     serie s1 = new serie("011", "Breaking Bad", 5, "Drama", "60", 5, "heisenbeg", "?");
     serie s2 = new serie("012", "Derbez en cuando", 0, "Comedia", "60", 3, "derbez", "eugenio");
     serie s3 = new serie("013", "Dragon Ball", 4, "Accion", "20", 5, "skira", "toriyama");
